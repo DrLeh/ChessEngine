@@ -1,0 +1,49 @@
+﻿@model Chess.Web.Models.Chess.ChessBoardViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    #chessBoard{
+        border:2px solid black;
+    }
+    #chessBoard td {
+        width: 100px;
+        height: 100px;
+    }
+
+    .LightSquare{
+        background-color:#f2f2f2;
+
+    }
+    .DarkSquare{
+        background-color:lightblue;
+    }
+    .WhiteTeam {
+        color:white;
+   -webkit-text-stroke: 2px black;
+    }
+    .BlackTeam{
+        color:black;
+    }
+</style>
+<table id="chessBoard">
+    @for (int i = 7; i >= 0; i--)
+    {
+        <tr>
+
+            @for (int j = 0; j < 8; j++)
+            {
+                var square = Model.Squares[j, i];
+                <td class="@(square.Piece?.Team)Team  @(square.Color.ToString())Square text-center">
+                    @if (square.HasPiece)
+                    {
+                        <h1>
+                            <span class="glyphicon glyphicon-@square.Piece.PieceType.GlyphiconName"></span>
+                        </h1>
+                    }
+                </td>
+            }
+        </tr>
+    }
+</table>
