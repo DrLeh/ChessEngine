@@ -42,9 +42,13 @@
   <ItemGroup>
     <Compile Include="Board\BoardContants.cs" />
     <Compile Include="Board\IBoardRepresentation.cs" />
+    <Compile Include="Board\LinearSquareCentricBoard.cs" />
     <Compile Include="Board\SquareCentricBoard.cs" />
     <Compile Include="Board\Rank.cs" />
+    <Compile Include="Enums\PieceTypeEnum.cs" />
+    <Compile Include="Enums\Team.cs" />
     <Compile Include="Helpers\BoardIterator.cs" />
+    <Compile Include="Pieces\PieceType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Board\Square.cs" />
     <Compile Include="Pieces\Piece.cs" />
